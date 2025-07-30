@@ -1,0 +1,1477 @@
+/* boedo.css */
+@font-face {
+  font-family: 'Cinzel';
+  src: url('../font/Cinzel-Bold.ttf') format('truetype');
+  font-weight: bold;
+}
+
+@font-face {
+  font-family: 'Playfair Display';
+  src: url('../font/PlayfairDisplay-Italic-VariableFont_wght.ttf') format('truetype');
+  font-style: italic;
+}
+
+/* Añadir al principio para scroll suave en todo el documento */
+html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    background-color: #000; /* Fondo negro */
+    color: #fff;            /* Letras blancas */
+    font-family: 'Segoe UI', sans-serif;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    padding-top: 60px;
+  }
+  
+
+  .top-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #000000;
+    width: 100vw;
+    max-width: 100%;
+    box-sizing: border-box;
+    padding: 10px 20px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 999;
+  }
+  
+  @media (max-width: 600px) {
+    .top-bar {
+      height: 60px;
+      width: auto;
+      flex-shrink: 0;
+      padding: 10px;
+      flex-wrap: nowrap;
+      justify-content: space-between;
+      align-items: center;
+      box-sizing: border-box;
+    }
+  
+  /*  .logo {
+      height: 60px;  /* o el tamaño que prefieras 
+      width: auto;   /* mantiene la proporción 
+      flex-shrink: 0;
+    }*/
+  
+    .topbar-nombre {
+      font-size: 1.3rem;
+      text-align: center;
+      flex-grow: 1;
+      margin: 0 10px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+  
+    .menu-toggle,
+    .menu-close {
+      font-size: 1.6rem;
+      position: relative;
+      top: auto;
+      right: auto;
+    }
+  }
+  
+  
+/* Menú hamburguesa lateral derecho */
+.menu {
+    position: fixed;
+    top: 0;
+    right: -200px; /* oculto al iniciar */
+    width: 200px;
+    height: 100vh;
+    background-color: #000;
+    color: #fff;
+    z-index: 1000;
+    transition: right 0.4s ease-in-out;
+    padding: 2em 1em;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .topbar-nombre {
+    color: white;
+    font-family: 'Cinzel', serif;
+    font-size: 1.8rem;
+    font-weight: bold;
+    margin-left: 15px;
+    text-shadow: 1px 1px 4px rgba(0,0,0,0.5);
+  }
+  
+  .topbar-nombre .topbar-building {
+    color: #ffd700; /* dorado */
+  }
+  
+
+  .menu.open {
+    right: 0;
+  }
+  
+  .menu-toggle {
+    font-size: 1.8em;
+    color: white; /* ← este valor cambia el color del ícono */
+    cursor: pointer;
+  }
+  
+  .menu-close {
+    display: none;
+    font-size: 2rem;
+    color: white;
+    cursor: pointer;
+    position: absolute;
+    right: 1rem;
+    top: 1rem;
+    z-index: 1001;
+  }
+  
+  .menu.open + .menu-close {
+    display: block;
+  }
+  
+
+  .menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .menu ul li {
+    margin-bottom: 1.2em;
+  }
+  
+  .menu ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  
+  .hero {
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .hero-overlay { 
+    position: absolute;
+    top: 25%;
+    left: 50%;
+    font-size: 2.5rem;
+    transform: translateX(-50%);
+    text-align: center;
+    z-index: 2;
+    width: 100%;
+    padding: 0 20px;
+  
+    @media (max-width: 600px) {
+      .hero-overlay h1 {
+        font-size: 1.4rem;
+        padding: 0 15px;
+        line-height: 1.3;
+      }
+    }
+
+  }
+  
+ 
+  /* boedo.css */
+.top-bar .logo {
+  height: 40px;     /* ajusta aquí la altura deseada en escritorio */
+  width: auto;
+  flex-shrink: 0;
+}
+
+
+/* ============================= */
+/* 1. Sección con imagen de fondo */
+/* ============================= */
+.intro-fondo-unico {
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  /* height: 100vh; */    /* quitas el fullscreen */
+  min-height: calc(100vh - 60px); /* opcional: resta la altura del header */
+  padding: 60px 20px 40px; /* arriba = 60px para evitar tapar top-bar */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+/* Capa overlay oscura (para que el texto resalte) */
+.intro-fondo-unico::before {
+  content: "";
+  position: absolute;
+
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  /* Color negro con 0.4 de opacidad. Ajusta el 0.4 si quieres que sea más o menos oscuro */
+  background-color: rgba(0, 0, 0, 0.4);
+  z-index: 1;
+}
+
+/* ============================= */
+/* 2. Contenido (texto) encima   */
+/* ============================= */
+.intro-contenido {
+  position: relative;
+  z-index: 2;            /* Para que quede por encima del overlay */
+  max-width: 900px;
+  text-align: center;
+  color: #ffffff;        /* Texto en blanco */
+}
+
+/* Títulos grandes con sombra */
+.intro-contenido h1 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  font-weight: bold;
+  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.8);
+}
+
+/* Párrafo con sombra ligera */
+.intro-contenido p {
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+  line-height: 1.5;
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.7);
+}
+
+/* Si necesitas estilos adicionales para un botón: */
+/*
+.btn-intro {
+  background-color: #e53935;
+  color: white;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  cursor: pointer;
+  box-shadow: 1px 1px 5px rgba(0,0,0,0.5);
+  transition: background-color 0.3s ease;
+}
+
+.btn-intro:hover {
+  background-color: #c62828;
+}
+*/
+
+  
+  
+
+  
+  .plano-general {
+    padding: 50px;
+    background-color: black;
+    color: white;
+  }
+  
+  .contenido-plano {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap:175px; /* espacio entre imagen y texto */
+    flex-wrap: wrap; /* para que se adapte en pantallas chicas */
+  }
+  
+  .imagen-plano img {
+    max-width: 250px;
+    height: auto;
+    display: block;
+  }
+  
+  
+  .texto-plano {
+    max-width: 500px;
+  }
+  
+  
+  .texto-plano h2 {
+    font-size: 2rem;
+    margin-bottom: 15px;
+    color: #fff;
+  }
+  
+  .texto-plano p {
+    font-size: 1rem;
+    color: #ccc;
+    line-height: 1.6;
+  }
+  
+  .plano-general {
+    padding: 60px 20px;
+    background-color: black;
+    color: white;
+  }
+  
+  .contenido-plano {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 60px;
+  }
+  
+  .texto-plano {
+    flex: 1 1 400px;
+    max-width: 600px;
+  }
+  
+  .texto-plano h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+  
+  .texto-plano p {
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+  
+  .imagen-pb {
+    flex: 1 1 600px;
+    max-width: 100%;
+    text-align: center;
+  }
+  
+  .imagen-pb img {
+    width: 100%;
+    max-width: 800px;
+    height: auto;
+    border-radius: 8px;
+  }
+  
+
+  /* Estilos para la sección "Primer Piso" */
+.seccion-planta {
+  max-width: 1200px;       /* Ajusta según el ancho deseado */
+  margin: 0 auto;          /* Centra la sección en la página */
+  padding: 40px 20px;      /* Espaciado superior/inferior y lateral */
+}
+
+.seccion-planta h2 {
+  font-family: 'Segoe UI', sans-serif;
+  font-size: 2rem;         /* Tamaño de título */
+  text-align: center;
+  margin-bottom: 20px;
+  color: #ffffff;
+}
+
+/* Imagen del plano */
+.img-planta {
+  display: block;
+  width: 100%;             /* Ocupa todo el ancho disponible */
+  max-width: 100%;         /* Para que no crezca más allá de su contenedor */
+  height: auto;
+  margin: 0 auto 20px;     /* Centra la imagen y separa del párrafo */
+  border: 1px solid #ffffff;  /* Borde tenue que resalta el plano */
+  border-radius: 4px;
+}
+
+/* Descripción bajo la imagen */
+.descripcion-planta {
+  font-family: 'Segoe UI', sans-serif;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #ffffff;
+  text-align: justify;     /* Justifica el texto para mejor lectura */
+  max-width: 1000px;       /* Limita el ancho del párrafo */
+  margin: 0 auto;          /* Centra el párrafo dentro de la sección */
+}
+
+
+/* ─────────────────────────────────────────────────────────────────────────
+   1) RESET BÁSICO (si no estás usando tu propio reset)
+───────────────────────────────────────────────────────────────────────── */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ─────────────────────────────────────────────────────────────────────────
+   2) CONTENEDOR PRINCIPAL Y RESPONSIVE GRID
+───────────────────────────────────────────────────────────────────────── */
+.apartments-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;   /* Centra la grilla horizontalmente */
+  gap: 20px;                 /* Espacio entre boxes */
+  max-width: 1200px;
+  margin: 40px auto;         /* Centra la sección y deja margen arriba/abajo */
+  padding: 0 10px;           /* Espacio lateral en pantallas pequeñas */
+}
+
+/* Cada “box” ocupa el 23% aprox. en escritorio (4 en fila) */
+.apartment-box {
+  position: relative;
+  background: #1a1a1a;       /* FONDO oscurecido detrás de la imagen (opcional) */
+  width: calc(25% - 20px);   /* 4 elementos en fila considerando gap:20px */
+  cursor: pointer;           /* Indica que es clickeable */
+  overflow: hidden;
+  border-radius: 6px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.4);
+  transition: transform 0.2s ease;
+}
+
+.apartment-box:hover {
+  transform: translateY(-4px);
+}
+
+/* Adaptación para tablet/phone: 2 cajas por fila */
+@media (max-width: 768px) {
+  .apartment-box {
+    width: calc(50% - 20px); /* 2 en fila */
+  }
+}
+
+/* ─────────────────────────────────────────────────────────────────────────
+   3) IMAGEN FIJA DEL DEPARTAMENTO
+───────────────────────────────────────────────────────────────────────── */
+.apt-image {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  /* Opcional: Si tienes un tamaño fijo y quieres recorte:
+     height: 200px; object-fit: cover; */
+}
+
+/* ─────────────────────────────────────────────────────────────────────────
+   4) CONTENIDO EXPANDIBLE (oculto inicialmente)
+───────────────────────────────────────────────────────────────────────── */
+.apartment-info {
+  background: #292929;       /* Fondo oscuro para el contenido desplegado */
+  color: #fff;               /* Texto blanco */
+  max-height: 0;             /* Comienza colapsado */
+  overflow: hidden;
+  transition: max-height 0.35s ease, padding 0.35s ease;
+  padding: 0 20px;           /* Padding lateral */
+}
+
+/* Cuando .apartment-box tiene la clase .expanded, el max-height será grande */
+.apartment-box.expanded .apartment-info {
+  max-height: 800px;         /* Ajusta según el contenido esperado */
+  padding: 20px;             /* Agrega padding interno cuando esté expandido */
+}
+
+/* ─────────────────────────────────────────────────────────────────────────
+   5) ESTILOS INTERIORES DEL CONTENIDO (líneas, títulos y texto)
+───────────────────────────────────────────────────────────────────────── */
+.linea-blanca {
+  border: none;
+  height: 1px;
+  background-color: #fff;
+  margin: 12px 0;
+}
+
+.info-title {
+  font-family: 'Segoe UI', sans-serif;
+  font-size: 1.25rem;
+  color: #fff;
+  margin-bottom: 8px;
+}
+
+.info-text {
+  font-family: 'Segoe UI', sans-serif;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #ddd;
+}
+
+/* ─────────────────────────────────────────────────────────────────────────
+   6) BOTÓN DESCARGAR PLANO
+───────────────────────────────────────────────────────────────────────── */
+.download-wrapper {
+  display: flex;
+  justify-content: center;
+  margin-top: 16px;
+}
+
+.btn-descargar {
+  display: inline-block;
+  background: #e0e0e0;
+  color: #222;
+  text-decoration: none;
+  padding: 10px 18px;
+  border-radius: 4px;
+  font-family: 'Segoe UI', sans-serif;
+  font-size: 1rem;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.btn-descargar:hover {
+  background: #fff;
+  color: #000;
+}
+
+/* ─────────────────────────────────────────────────────────────────────────
+   7) OPCIONAL – AJUSTES FINALES DE TAMAÑOS/MÁRGENES
+───────────────────────────────────────────────────────────────────────── */
+.apartment-box .apt-image {
+  /* Si quieres que todas las imágenes tengan altura fija en lugar de auto: */
+  /* height: 180px;
+     object-fit: cover; */
+}
+
+/* ------------------------------------------------------------
+   Estilo para el título (por ejemplo: “Estudio 1A”) de cada box
+------------------------------------------------------------ */
+/* ─── 1) Estilo base para centrar título y flecha ─── */
+.apt-title {
+  font-family: 'Segoe UI', sans-serif;
+  font-size: 1.1rem;
+  color: #fff;
+  text-align: center;     /* Centra el texto dentro del box */
+  padding: 10px 0 0;      /* Pequeño espacio arriba y entre título/imagen */
+}
+
+/* ─── 2) Flecha de contorno (outline) ─── */
+.arrow-indicator {
+  width: 12px;
+  height: 12px;
+  margin: 8px auto;           /* Centra horizontalmente y deja espacio vertical */
+  border-left: 2px solid #fff;
+  border-bottom: 2px solid #fff;
+  transform: rotate(-45deg);  /* Forma de cheurón apuntando hacia abajo */
+  transition: transform 0.3s ease;
+}
+
+/* Cuando el box está expandido, rotamos la flecha para que apunte hacia arriba */
+.apartment-box.expanded .arrow-indicator {
+  transform: rotate(135deg);
+}
+
+/* ─── 3) Asegurarnos de que la imagen no tape la flecha ─── */
+.apt-image {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  /* Si tu .apartment-box tiene border-radius y overflow:hidden, no hace falta z-index adicional */
+}
+
+/* ─── Resto del CSS para que el acordeón funcione como antes ─── */
+.apartment-box {
+  position: relative;
+  background: #1a1a1a;
+  width: calc(25% - 20px);
+  cursor: pointer;
+  overflow: hidden;
+  border-radius: 6px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.4);
+  transition: transform 0.2s ease;
+}
+
+.apartment-box:hover {
+  transform: translateY(-4px);
+}
+
+@media (max-width: 768px) {
+  .apartment-box {
+    width: calc(50% - 20px);
+  }
+}
+
+.apartment-info {
+  background: #292929;
+  color: #fff;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.35s ease, padding 0.35s ease;
+  padding: 0 20px;
+}
+
+.apartment-box.expanded .apartment-info {
+  max-height: 800px;  /* Ajusta según tu contenido */
+  padding: 20px;
+}
+
+.linea-blanca {
+  border: none;
+  height: 1px;
+  background-color: #fff;
+  margin: 12px 0;
+}
+
+.info-title {
+  font-family: 'Segoe UI', sans-serif;
+  font-size: 1.25rem;
+  color: #fff;
+  margin-bottom: 8px;
+}
+
+.info-text {
+  font-family: 'Segoe UI', sans-serif;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #ddd;
+}
+
+.download-wrapper {
+  display: flex;
+  justify-content: center;
+  margin-top: 16px;
+}
+
+.btn-descargar {
+  display: inline-block;
+  background: #e0e0e0;
+  color: #222;
+  text-decoration: none;
+  padding: 10px 18px;
+  border-radius: 20px;
+  font-family: 'Segoe UI', sans-serif;
+  font-size: 1rem;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.btn-descargar:hover {
+  background: #fff;
+  color: #000;
+}
+
+
+}
+.footer-gp {
+  background-color: #000;
+  color: white;
+  padding: 40px 20px;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: auto;
+  text-align: center;
+}
+
+.footer-center a,
+.footer-right a {
+  color: #ffffff !important;
+  text-decoration: none !important;
+}
+
+.footer-center a:hover,
+.footer-right a:hover {
+  text-decoration: underline; /* opcional si querés que al pasar el mouse se subraye */
+}
+
+
+/* ==============================
+ SECCIÓN ¿QUIÉNES SOMOS?
+ ============================== */
+ .quienes-somos {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  padding: 4rem 2rem;
+  background: #f9f9f9;
+}
+
+.qs-content {
+  flex: 1;
+}
+
+.qs-content h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: #333;
+}
+
+.qs-content p {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #555;
+  margin-bottom: 1rem;
+}
+
+.qs-image {
+  flex: 1;
+  text-align: center;
+}
+
+.qs-image img {
+  max-width: 350px;
+  width: 200%;
+  height: auto;
+  display: inline-block;
+}
+
+
+.footer-left,
+  .footer-center,
+  .footer-right {
+    flex: 1;
+    padding: 10px;
+  }
+  
+
+  .footer-gp {
+    background-color: #000;
+    color: white;
+    padding: 40px 20px;
+    font-family: 'Segoe UI', sans-serif;
+  }
+  
+  .footer-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: auto;
+    text-align: center;
+  }
+  
+
+  .footer-logo {
+    max-width: 120px;
+    height: auto;
+  }
+  
+  .footer-center p {
+    margin: 4px 0;
+  }
+  
+  .footer-titulo {
+    font-weight: bold;
+    margin-bottom: 10px;
+    font-size: 1.1em;
+  }
+  
+  .footer-copy {
+    margin-top: 20px;
+    font-size: 0.85em;
+    color: #aaa;
+  }
+  
+  .footer-right a {
+    display: block;
+    color: white;
+    text-decoration: none;
+    margin: 4px 0;
+    font-size: 0.95em;
+  }
+  
+  .footer-right a:hover {
+    text-decoration: underline;
+  }
+  
+  @media (max-width: 768px) {
+    .footer-container {
+      flex-direction: column;
+      text-align: center;
+      gap: 20px;
+    }
+  
+    .footer-left,
+    .footer-center,
+    .footer-right {
+      flex: unset;
+    }
+  }
+
+  .galeria-amenities {
+    text-align: center;
+    margin: 60px 0;
+  }
+  
+  .galeria-amenities {
+    text-align: center;
+    padding: 60px 0;
+  }
+  
+  .carousel-wrapper {
+    max-width: 1200px;
+    margin: auto;
+    overflow: hidden;
+    position: relative;
+    padding: 10px 0;
+    height: auto;
+  }
+  
+  .carousel-track {
+    display: flex;
+    transition: transform 0.6s ease;
+    align-items: center;
+  }
+  
+  .carousel-card {
+    flex: 0 0 33.333%;
+    max-width: 33.333%;
+    padding: 10px;
+    box-sizing: border-box;
+    opacity: 0.4;
+    transition: all 0.4s ease;
+  }
+  
+  .carousel-card.active {
+    opacity: 1;
+    transform: scale(1.05);
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.4);
+    z-index: 2;
+  }
+  
+  .carousel-card img {
+    width: 100%;
+    height: 240px; /* ⚠️ controlá el alto aquí */
+    object-fit: cover;
+    border-radius: 12px;
+    display: block;
+  }
+  
+  
+  .carousel-card.active {
+    opacity: 1;
+    transform: scale(1.05);
+    box-shadow: 0 0 30px rgba(255, 255, 255, 0.3);
+    z-index: 2;
+  }
+  
+  .carousel-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 2.5rem;
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+    z-index: 5;
+  }
+  
+  .carousel-arrow.left {
+    left: 0;
+  }
+  
+  .carousel-arrow.right {
+    right: 0;
+  }
+  
+  .carousel-indicator {
+    text-align: center;
+    font-size: 1.1rem;
+    color: white;
+    margin-top: 15px;
+    letter-spacing: 1px;
+  }
+  
+  .carousel-card.active {
+    transform: scale(1.05);
+    opacity: 1;
+    z-index: 2;
+    box-shadow: 0 0 30px rgba(255, 255, 255, 0.5);
+    transition: all 0.5s ease;
+  }
+  
+  .section-amenities {
+    text-align: center;
+    margin-top: 80px;
+    margin-bottom: 60px;
+    color: white;
+  }
+  
+  .section-amenities h2 {
+    font-family: 'Cinzel', serif;
+    font-weight: bold;
+    font-size: 2.5rem;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+  }
+  
+  .section-amenities p {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: 1.4rem;
+    max-width: 600px;
+    margin: auto;
+    opacity: 0.85;
+  }
+
+  @font-face {
+    font-family: 'Cinzel';
+    src: url('../font/Cinzel-Bold.ttf') format('truetype');
+    font-weight: bold;
+  }
+  @font-face {
+    font-family: 'Libre Baskerville';
+    src: url('../font/LibreBaskerville-Regular.ttf') format('truetype');
+  }
+  @font-face {
+    font-family: 'Playfair Display';
+    src: url('../font/PlayfairDisplay-Italic-VariableFont_wght.ttf') format('truetype');
+    font-style: italic;
+  }
+  
+  .seccion-destacada {
+    text-align: center;
+    color: white;
+    padding: 80px 30px 60px;
+    background-color: #0d0d0d;
+  }
+  
+  .destacada-subtitulo {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: 1.4rem;
+    opacity: 0.8;
+    margin-bottom: 10px;
+  }
+  
+  .destacada-titulo {
+    font-family: 'Libre Baskerville', serif;
+    font-size: 1.8rem;
+    font-weight: 400;
+    line-height: 1.6;
+    margin-bottom: 25px;
+    max-width: 850px;
+    margin-inline: auto;
+  }
+  
+  .destacada-linea {
+    width: 60px;
+    height: 2px;
+    background-color: #fff;
+    margin: 20px auto;
+    border: none;
+    opacity: 0.3;
+  }
+  
+  .destacada-boton {
+    display: inline-block;
+    margin-top: 15px;
+    font-family: 'Cinzel', serif;
+    font-size: 0.9rem;
+    letter-spacing: 2px;
+    color: white;
+    text-decoration: none;
+    border-bottom: 1px solid white;
+    padding-bottom: 3px;
+    transition: all 0.3s ease;
+  }
+  
+  .destacada-boton:hover {
+    opacity: 0.7;
+    padding-left: 8px;
+  }
+  
+  .flecha {
+    font-size: 1.1rem;
+    margin-left: 8px;
+    transition: transform 0.3s ease;
+  }
+  
+  .destacada-boton:hover .flecha {
+    transform: translateX(5px);
+  }
+  
+    @media (max-width: 768px) {
+      .carousel-card {
+        flex: 0 0 50%;
+        max-width: 50%;
+      }
+    }
+    
+    @media (max-width: 500px) {
+      .carousel-card {
+        flex: 0 0 100%;
+        max-width: 100%;
+      }
+    }  
+
+
+      /* 1) Contenedor principal: flex en desktop, column en móvil */
+.ubicacion-oficina .contenido-ubicacion {
+  display: flex;
+  align-items: center;         /* centra verticalmente los dos bloques */
+  justify-content: space-between;
+  gap: 2rem;                   /* espacio entre el texto y el mapa */
+  max-width: 1200px;           /* opcional: ancho máximo del área */
+  margin: 0 auto;              /* centra el contenido en la página */
+  padding: 2rem 1rem;          /* padding superior/inferior y algo de margen lateral */
+}
+
+/* 2) Texto (izquierda) y mapa (derecha) ocupan espacio proporcional */
+.texto-oficina {
+  flex: 1;                     /* ocupa el 50% disponible (flex-grow = 1) */
+  min-width: 280px;            /* ancho mínimo para no romperse */
+}
+
+.mapa-oficina {
+  flex: 1;                     /* ocupa el otro 50% disponible */
+  min-width: 280px;
+}
+
+/* 3) Ajustes internos del texto (opcional) */
+.texto-oficina .hero-titulo {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+.texto-oficina p {
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+/* 4) Forzar que el iframe ocupe todo el contenedor de la derecha */
+.mapa-oficina iframe {
+  width: 100%;
+  height: 100%;         /* La altura la limitaremos con un contenedor padre */
+  min-height: 350px;    /* Altura mínima del mapa (ajústala a tu gusto) */
+  border: 0;
+}
+
+/* 5) Media query: en pantallas pequeñas, apilamos verticalmente */
+@media screen and (max-width: 768px) {
+  .ubicacion-oficina .contenido-ubicacion {
+    flex-direction: column;
+    text-align: center;    /* centra el texto en móvil */
+  }
+  .texto-oficina,
+  .mapa-oficina {
+    width: 100%;
+    min-width: auto;
+  }
+  .mapa-oficina iframe {
+    min-height: 250px;     /* altura más reducida en móvil */
+  }
+}
+
+/* estados iniciales */
+.plano-general img,
+.seccion-planta img {
+  opacity: 0;
+  transform: translateX(-50px);
+  transition: all 0.6s ease-out;
+}
+.plano-general .texto-plano,
+.seccion-planta .descripcion-planta,
+.seccion-planta h2 {
+  opacity: 0;
+  transform: translateX(50px);
+  transition: all 0.6s ease-out;
+}
+
+/* cuando entra en vista */
+.in-view {
+  opacity: 1 !important;
+  transform: translateX(0) !important;
+}
+
+.centrado-texto {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: left;
+  color: white; /* opcional, si estás usando fondo oscuro */
+  padding: 20px;
+}
+
+.seccion-planta-baja {
+  background-color: black;
+  color: white;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.seccion-planta-baja .imagen-plano img {
+  width: 100%;
+  max-width: 1200px;
+  height: auto;
+  display: block;
+  margin: 0 auto 30px;
+  border-radius: 8px;
+}
+
+.texto-plano-baja {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 15px;
+  text-align: justify;
+}
+
+.texto-plano-baja h2 {
+  font-size: 2rem;
+  margin-bottom: 15px;
+}
+
+.texto-plano-baja p {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #ccc;
+}
+
+/* Responsive */
+@media screen and (max-width: 768px) {
+  .texto-plano-baja h2 {
+    font-size: 1.5rem;
+  }
+
+  .texto-plano-baja p {
+    font-size: 0.95rem;
+  }
+}
+
+html, body {
+  overflow-x: hidden !important;
+}
+
+.portada-carrousel {
+  position: relative;
+}
+.video-container {
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%; /* 16:9 */
+  height: 0;
+}
+.video-container iframe, .video-container .protector {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  border: 0;
+}
+.video-container .protector {
+  pointer-events: all;
+  z-index: 2;
+}
+.glide__slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.glide__arrows {
+  position: absolute;
+  width: 100%;
+  top: 70%;
+  left: 0;
+  display: flex;
+  justify-content: space-between;
+  pointer-events: none; /* para que sólo los botones reciban el click */
+}
+
+.glide__arrow {
+  pointer-events: auto;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(180,180,180,0.5);
+  color: #222;
+  font-size: 2.5rem;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s, transform 0.2s;
+  cursor: pointer;
+  box-shadow: 0 2px 10px 0 rgba(0,0,0,0.13);
+  z-index: 10;
+  margin: 0 16px;
+  user-select: none;
+}
+
+.glide__arrow:hover {
+  background: #ffd900;
+  color: #000;
+  transform: scale(1.15);
+}
+
+
+
+/* ——————————————————————————————————————————————————————————————————————
+   Portada Overlay
+   —————————————————————————————————————————————————————————————————————— */
+.portada-overlay {
+  position: absolute;
+  z-index: 3;
+  top: 8vh;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  color: #fff;
+  transition: opacity 0.5s;
+  pointer-events: none;
+  width: 90vw;
+  max-width: 650px;
+}
+.portada-overlay h1 {
+  font-size: 2.8rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  margin-bottom: 0.7rem;
+  text-shadow:
+    2px 2px 6px #222020,
+    -2px 2px 6px #222020,
+    2px -2px 6px #222020,
+    -2px -2px 6px #222020,
+    0 2px 18px #222020;
+}
+
+.portada-overlay p {
+  font-size: 1.25rem;
+  font-weight: 400;
+  opacity: 0.85;
+  text-shadow:
+    1.5px 1.5px 5px #000,
+    -1.5px 1.5px 5px #000,
+    1.5px -1.5px 5px #000,
+    -1.5px -1.5px 5px #000,
+    0 2px 14px #000a;
+}
+
+
+/* Overlay inicial con título y slogan */
+.portada-overlay {
+  position: absolute;
+  z-index: 3;
+  top: 6vh; /* más arriba */
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  color: #fff;
+  transition: opacity 0.8s ease;
+  width: 90vw;
+  max-width: 650px;
+}
+
+/* Hacer transición suave */
+.portada-overlay.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* Overlay "OBRA HOY" */
+.obra-overlay {
+  position: absolute;
+  z-index: 3;
+  top: 4vh; /* aún más arriba */
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  color: #fff;
+  font-size: 1.8rem; /* más pequeño */
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  opacity: 0;
+  transition: opacity 0.8s ease;
+  text-shadow: 0 2px 12px #000a;
+}
+
+/* Cuando aparece */
+.obra-overlay.visible {
+  opacity: 1;
+}
+
+
+
+/* ——————————————————————————————————————————————————————————————————————
+   Carrusel Styles
+   —————————————————————————————————————————————————————————————————————— */
+.carrousel-container {
+  width: 100vw;
+  height: 100vh;   /* Asegura altura pantalla completa */
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.carrousel-slider {
+  display: flex;
+  height: 100vh;   /* Esto es clave: fuerza el alto de los items internos */
+  width: 100vw;
+  transition: transform 0.7s cubic-bezier(.75,0,.25,1);
+}
+
+.carrousel-item {
+  flex: 0 0 100vw;
+  height: 100vh;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.carrousel-item img,
+.carrousel-item iframe {
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  display: block;
+}
+
+.carrousel-item .protector {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 2;
+  /* Si quieres que el usuario NO pueda hacer nada en el video: */
+  cursor: default;
+}
+
+
+/* ——————————————————————————————————————————————————————————————————————
+   Flechas de navegación
+   —————————————————————————————————————————————————————————————————————— */
+.carrousel-arrow {
+  background: #fff8;
+  border: none;
+  border-radius: 50%;
+  width: 48px;
+  height: 48px;
+  color: #111;
+  font-size: 2.3rem;
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  z-index: 4;
+  transition: background 0.2s, transform 0.1s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: translateY(-50%);
+  opacity: 0.8;
+}
+.carrousel-arrow.left {
+  left: 22px;
+}
+.carrousel-arrow.right {
+  right: 22px;
+}
+.carrousel-arrow:hover {
+  background: #fff;
+  opacity: 1;
+  transform: translateY(-50%) scale(1.08);
+}
+
+/* ——————————————————————————————————————————————————————————————————————
+   Ajustes para móvil
+   —————————————————————————————————————————————————————————————————————— */
+@media (max-width: 600px) {
+  .carrousel-container {
+    min-height: 100vh;
+    height: 100vh;
+  }
+  .portada-overlay {
+    top: 3vh;
+    width: 99vw;
+    max-width: 99vw;
+    padding: 0 2vw;
+  }
+  .portada-overlay h1 {
+    font-size: 1.13rem;
+    margin-bottom: 0.3rem;
+  }
+  .portada-overlay p {
+    font-size: 1rem;
+    opacity: 0.85;
+  }
+}
+
+/* Overlay que oscurece el fondo */
+#popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.85); /* opaca el fondo */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.5s ease;
+}
+
+/* Imagen centrada */
+#popup-image {
+  max-width: 300px;
+  max-height: 300px;
+  animation: emerger 0.7s ease forwards;
+  opacity: 0;
+  transform: scale(0.6);
+}
+
+/* Animación de aparición */
+@keyframes emerger {
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Cuando el popup está activo */
+#popup-overlay.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* 🔧 Fix para que los videos no se vean cortados */
+.glide__slide video,
+.glide__slide iframe {
+  width: 100vw;          /* ocupa todo el ancho */
+  height: 100vh;         /* ocupa todo el alto */
+  object-fit: cover;     /* recorta pero mantiene proporción */
+  display: block;
+}
+
+@media (max-width: 768px) {
+  .glide__slide video,
+  .glide__slide iframe {
+    height: auto;         /* que se ajuste a la proporción real */
+    max-height: 70vh;     /* no supere 70% de la pantalla */
+  }
+}
+
+/* Ajustes específicos para móviles */
+@media (max-width: 600px) {
+  /* Flechas mucho más chicas */
+  .glide__arrow {
+    font-size: 1.2rem;
+    width: 28px;
+    height: 28px;
+    opacity: 0.7; /* más sutiles */
+  }
+
+  /* Texto OBRA HOY más chico y discreto */
+  .obra-overlay h1 {
+    font-size: 1.2rem;
+    letter-spacing: 0.03em;
+  }
+  .obra-overlay {
+    top: 3vh; /* lo acercamos arriba para no tapar el video */
+  }
+
+  /* Título principal */
+  .portada-overlay h1 {
+    font-size: 1.4rem;
+    margin-bottom: 0.4rem;
+  }
+
+  /* Subtítulo */
+  .portada-overlay p {
+    font-size: 0.9rem;
+    line-height: 1.2rem;
+  }
+}

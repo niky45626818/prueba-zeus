@@ -1,0 +1,790 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Planos e Información - Boedo</title>
+  <link rel="stylesheet" href="css/boedo.css">
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+
+  <script defer src="js/boedo.js"></script>
+</head>
+<!-- Glide CSS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@glidejs/glide/dist/css/glide.core.min.css">
+<!-- Glide JS -->
+<script src="https://cdn.jsdelivr.net/npm/@glidejs/glide/dist/glide.min.js"></script>
+
+
+<body>
+  <header>
+    <div class="top-bar black">
+      <a href="index.html" class="logo-link">
+        <img src="assets/img/logo_gp.png" alt="GP Building Logo" class="logo">
+      </a>
+      <span class="topbar-nombre">
+        GP<span class="topbar-building">Building</span>
+      </span>      
+      <div class="menu-toggle" id="menu-toggle">&#9776;</div>
+      <div class="menu-close" id="menu-close">&times;</div>
+    </div>
+    
+    <nav id="menu" class="menu black-menu">
+      <ul>
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="index.html#quienes-somos">¿Quiénes somos?</a></li>
+        <li><a href="#index.htmlficha-minimal">Proyectos</a></li>
+        <li><a href="contacto.php">Contacto</a></li>
+      </ul>
+    </nav>
+  </header>
+    
+<!-- Overlay y popup -->
+<div id="popup-overlay">
+  <img src="assets/img/ver_avances.png" alt="Ver Avances" id="popup-image">
+</div>
+ 
+
+<!-- 1. Incluí Glide CSS y JS en el <head> -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@glidejs/glide/dist/css/glide.core.min.css">
+<script src="https://cdn.jsdelivr.net/npm/@glidejs/glide/dist/glide.min.js"></script>
+
+<section class="portada-carrousel" id="portada">
+  <div class="portada-overlay" id="portada-overlay">
+    <h1>¿Listo para conocer tu próximo lugar?</h1>
+    <p>Acá vas a encontrar los planos de un sueño cumplido, de una inversión segura, la información para vos.</p>
+  </div>
+
+  <div class="obra-overlay" id="obra-overlay">
+    <h1>OBRA HOY</h1>
+  </div>
+
+  <div class="glide" id="glide-portada">
+    <div class="glide__track" data-glide-el="track">
+      <ul class="glide__slides">
+        
+
+        <!-- Slide 2: Video MP4 -->
+        <li class="glide__slide">
+          <div class="video-container">
+            <video src="assets/img/video1t.mp4" autoplay muted loop playsinline preload="metadata" ></video>
+            <div class="protector"></div>
+          </div>
+        </li>
+
+        <!-- Slide 3: Video MP4 -->
+        <li class="glide__slide">
+          <div class="video-container">
+            <video src="assets/img/video2t.mp4" autoplay muted loop playsinline preload="metadata" ></video>
+            <div class="protector"></div>
+          </div>
+        </li>
+
+        <!-- Slide 4: Video MP4 -->
+        <li class="glide__slide">
+          <div class="video-container">
+            <video src="assets/img/video3t.mp4" autoplay muted loop playsinline preload="metadata" ></video>
+            <div class="protector"></div>
+          </div>
+        </li>
+
+        <!-- Slide 5: Video MP4 -->
+        <li class="glide__slide">
+          <div class="video-container">
+            <video src="assets/img/video4t.mp4" autoplay muted loop playsinline preload="metadata" ></video>
+            <div class="protector"></div>
+          </div>
+        </li>
+
+      </ul>
+    </div>
+
+    <!-- Flechas -->
+    <div class="glide__arrows" data-glide-el="controls">
+      <button class="glide__arrow glide__arrow--left" data-glide-dir="<">&lt;</button>
+      <button class="glide__arrow glide__arrow--right" data-glide-dir=">">&gt;</button>
+    </div>
+  </div>
+</section>
+
+
+
+  
+
+
+  <!-- Seccion principal del plano -->
+  <section class="plano-general" id="plano-general">
+    <div class="contenido-plano">
+      <div class="imagen-plano">
+        <img src="assets/img/plano_general.png" alt="Plano Boedo">
+      </div>
+      <div class="texto-plano">
+        <h2>Plano general de Boedo</h2>
+        <p>El Edificio Boedo cuenta con 13 pisos y un diseño moderno pensado para la comodidad y funcionalidad. En la planta baja se ubican 2 unidades comerciales y una cochera cubierta con acceso práctico y seguro.          Entre sus amenities destacan una terraza con solárium y área de parrilla, ideales para disfrutar momentos de recreación. Una propuesta integral que combina estilo, confort y excelente ubicación en el corazón de Boedo.</p>
+      </div>
+    </div>
+  </section>
+
+
+  <section class="galeria-amenities">
+    <p class="destacada-subtitulo">Propiedades destacadas</p>
+    <h2 class="destacada-titulo">Descubre nuestras unidades disponibles<br>y el viaje hacia un sueño de inversión, hogar y rentabilidad.</h2>
+    <hr class="destacada-linea">
+    <a href="#primer-piso" class="destacada-boton">
+      PLANOS DE MI PRÓXIMA UNIDAD <span class="flecha">→</span>
+    </a>
+    <div class="carousel-wrapper">
+      <button class="carousel-arrow left">❮</button>
+  
+      <div class="carousel-track">
+        <div class="carousel-card active"><img src="assets/img/int1.png" alt="int1"></div>
+        <div class="carousel-card"><img src="assets/img/int2.png" alt="int2"></div>
+        <div class="carousel-card"><img src="assets/img/int3.png" alt="int3"></div>
+        <div class="carousel-card"><img src="assets/img/int4.png" alt="int4"></div>
+        <div class="carousel-card"><img src="assets/img/int5.png" alt="int5"></div>
+        <div class="carousel-card"><img src="assets/img/int6.png" alt="int6"></div>
+        <div class="carousel-card"><img src="assets/img/int7.png" alt="int7"></div>
+        <div class="carousel-card"><img src="assets/img/int8.png" alt="int8"></div>
+        <div class="carousel-card"><img src="assets/img/int9.png" alt="int9"></div>
+        <div class="carousel-card"><img src="assets/img/int10.png" alt="int10"></div>
+        <div class="carousel-card"><img src="assets/img/int11.png" alt="int11"></div>
+        <div class="carousel-card"><img src="assets/img/int12.png" alt="int12"></div>
+        <div class="carousel-card"><img src="assets/img/int13.png" alt="int13"></div>
+        <div class="carousel-card"><img src="assets/img/int14.png" alt="int14"></div>
+        <div class="carousel-card"><img src="assets/img/int15.png" alt="int15"></div>
+        <div class="carousel-card"><img src="assets/img/int16.png" alt="int16"></div>
+        <div class="carousel-card"><img src="assets/img/int7.png" alt="int17"></div>
+        <div class="carousel-card active"><img src="assets/img/int1.png" alt="int1"></div>
+      </div>
+      
+      
+  
+      <button class="carousel-arrow right">❯</button>
+    </div>
+    <div class="carousel-indicator">
+      <span id="current-slide">1</span> / <span id="total-slides">16</span>
+    </div>
+  </section>
+  
+  <section class="ubicacion-oficina">
+    <div class="contenido-ubicacion">
+      <div class="texto-oficina">
+        <h2 class="hero-titulo">
+          <span class="olivera">Tu sueño comienza con</span>
+          <span class="cinzel">GpBuilding</span>
+        </h2>
+        <p>
+          Te esperamos en nuestras oficinas para ayudarte a gestionar<br>
+          tu nueva unidad, tu inversión y tu próximo paso.
+        </p>
+      </div>
+      <div class="mapa-oficina">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3283.2967515379137!2d-58.41885792531307!3d-34.62229516537112!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcca82f6fcf31f%3A0x70a0b5e8b9c1e15f!2sAv.%20Boedo%20772%2C%20C1218AAQ%20Cdad.%20Aut%C3%B3noma%20de%20Buenos%20Aires%2C%20Argentina!5e0!3m2!1ses!2sus!4v1690245663458!5m2!1ses!2sus"
+          width="600"
+          height="450"
+          style="border:0;"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+        ></iframe>
+      </div>
+    </div>
+  </section>
+  
+
+
+  <section class="plano-general" id="plano-general">
+    <div class="contenido-plano">
+      <div class="imagen-pb">
+        <img src="assets/img/-1.png" alt="Plano Boedo">
+      </div>
+      <div class="texto-plano">
+        <h2>Subsuelo técnico del edificio</h2>
+        <p>El subsuelo del Edificio Boedo está destinado a servicios esenciales y espacios técnicos que garantizan el correcto funcionamiento del edificio. Incluye áreas como la sala de tanques, cámara transformadora, sala de medidores de electricidad, bauleras privadas, y la sala de máquinas del montavehículos. Todo el nivel está interconectado por pasillos que aseguran fácil acceso operativo y mantenimiento seguro para el personal autorizado.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Seccion planta baja -->
+  <section class="seccion-planta-baja" id="planta-baja">
+    <div class="imagen-plano">
+      <img src="assets/img/planta_baja.png" alt="Plano Planta Baja Boedo">
+    </div>
+    <div class="texto-plano-baja">
+      <h2>Planta Baja – Local Comercial</h2>
+      <p>
+        La planta baja del Edificio Boedo está diseñada para potenciar el desarrollo comercial. Cuenta con un amplio local de <strong>450 m²</strong> con frente a la calle, ideal para negocios de gran visibilidad. Posee ingreso independiente, baño de uso público, áreas técnicas y espacio para depósito, asegurando comodidad tanto para clientes como para empleados. Su disposición y accesibilidad lo convierten en un punto estratégico para cualquier tipo de emprendimiento.
+      </p>
+    </div>
+  </section>
+  
+
+  
+<section class="plano-general" id="plano-general">
+  <div class="contenido-plano">
+    <div class="imagen-pb">
+      <img src="assets/img/entrepiso.png" alt="Plano Entrepiso Boedo">
+    </div>
+    <div class="texto-plano">
+      <h2>Entrepiso / primer piso</h2>
+      <p>
+        El entrepiso del Edificio Boedo cuenta con un <strong>local comercial de 172 m²</strong>, ideal para complementar actividades del espacio principal. En el sector priavdo del edificio, en el primer piso cuenta un sector exclusivo de <strong>parking para bicicletas</strong> y circulación interior mediante pasillos amplios y funcionales.
+      </p>
+    </div>
+  </div>
+</section>
+
+
+ 
+
+
+  <section id="primer-piso" class="seccion-planta">
+    <h2>Segundo Piso</h2>
+    <img src="assets/img/segundo_piso.png" alt="Plano pisos 3 a 12" class="img-planta">
+    <p class="centrado-texto">
+      El segundo piso del Edificio Boedo cuenta con una distribución funcional que incluye dos monoambientes (A y B), dos estudios (C y D), un sector de lavandería, un amplio SUM (Salón de Usos Múltiples) y una terraza al contrafrente. Los departamentos tienen acceso a patios internos que favorecen la ventilación e iluminación natural, mientras que el SUM y la terraza ofrecen espacios ideales para actividades sociales y recreativas.
+    </p>
+  </section>
+  
+
+   <!-- CONTENEDOR PRINCIPAL -->
+<section class="apartments-container">
+  <!-- BOX A -->
+  <div class="apartment-box" data-pdf="2A.pdf">
+    <h3 class="apt-title">Monoambiente A</h3>
+    <img src="assets/img/2a.png" alt="Monoambiente A" class="apt-image">
+    <div class="arrow-indicator"></div>
+    <div class="apartment-info">
+      <hr class="linea-blanca">
+      <h3 class="info-title">Monoambiente A</h3>
+      <p class="info-text">
+        Tipo: Monoambiente<br>
+        Superficie total: 32,98 m²
+      </p>
+      <hr class="linea-blanca">
+      <h3 class="info-title">Distribución</h3>
+      <p class="info-text">
+        Ambiente único con cocina integrada, baño completo y espacio flexible de estar-dormitorio. Vista al contrafrente y excelente ventilación.
+      </p>
+      <hr class="linea-blanca">
+      <div class="download-wrapper">
+        <a href="pdf/2A.pdf" class="btn-descargar" download>
+          Descargar plano 2A
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- BOX B -->
+  <div class="apartment-box" data-pdf="2b.pdf">
+    <h3 class="apt-title">Monoambiente B</h3>
+    <img src="assets/img/2b.png" alt="Monoambiente B" class="apt-image">
+    <div class="arrow-indicator"></div>
+    <div class="apartment-info">
+      <hr class="linea-blanca">
+      <h3 class="info-title">Monoambiente B</h3>
+      <p class="info-text">
+        Tipo: Monoambiente<br>
+        Superficie total: 35 m²
+      </p>
+      <hr class="linea-blanca">
+      <h3 class="info-title">Distribución</h3>
+      <p class="info-text">
+        Ambiente amplio con cocina integrada, baño completo y balcón con vista al frente. Muy luminoso, ideal para vivienda o estudio.
+      </p>
+      <hr class="linea-blanca">
+      <div class="download-wrapper">
+        <a href="pdf/2b.pdf" class="btn-descargar" download>
+          Descargar plano 2B
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- BOX C -->
+  <div class="apartment-box" data-pdf="2c.pdf">
+    <h3 class="apt-title">Estudio C</h3>
+    <img src="assets/img/2c.png" alt="Estudio C" class="apt-image">
+    <div class="arrow-indicator"></div>
+    <div class="apartment-info">
+      <hr class="linea-blanca">
+      <h3 class="info-title">Estudio C</h3>
+      <p class="info-text">
+        Tipo: Estudio<br>
+        Superficie total: 22,34 m²
+      </p>
+      <hr class="linea-blanca">
+      <h3 class="info-title">Distribución</h3>
+      <p class="info-text">
+        Espacio compacto y funcional con baño completo y cocina equipada. Vista a patio interno, excelente iluminación natural.
+      </p>
+      <hr class="linea-blanca">
+      <div class="download-wrapper">
+        <a href="pdf/2c.pdf" class="btn-descargar" download>
+          Descargar plano 2C
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- BOX D -->
+  <div class="apartment-box" data-pdf="2d.pdf">
+    <h3 class="apt-title">Estudio D</h3>
+    <img src="assets/img/2d.png" alt="Estudio D" class="apt-image">
+    <div class="arrow-indicator"></div>
+    <div class="apartment-info">
+      <hr class="linea-blanca">
+      <h3 class="info-title">Estudio D</h3>
+      <p class="info-text">
+        Tipo: Estudio<br>
+        Superficie total: 22,34 m²
+      </p>
+      <hr class="linea-blanca">
+      <h3 class="info-title">Distribución</h3>
+      <p class="info-text">
+        Diseño eficiente con baño privado, cocina integrada y vista al patio interior. Ideal para estudiantes o profesionales.
+      </p>
+      <hr class="linea-blanca">
+      <div class="download-wrapper">
+        <a href="pdf/2d.pdf" class="btn-descargar" download>
+          Descargar plano 2D
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<!-- SECCIÓN PISOS 2 A 11 -->
+<section id="pisos-3-12" class="seccion-planta">
+  <h2>Pisos 3 a 12</h2>
+  <!-- Imagen general de cada piso -->
+  <img src="assets/img/piso2a11.png" alt="Plano pisos 3 a 12" class="img-planta">
+  <p class="centrado-texto">
+    Cada uno de los pisos del 3° al 12° está conformado por seis unidades funcionales distribuidas simétricamente a ambos lados del núcleo de circulación vertical del edificio.
+    En cada piso se encuentran:
+    <ul>
+      <li><strong>Monoambiente A:</strong> ubicado al contrafrente izquierdo, con cocina integrada, baño completo y balcón.</li>
+      <li><strong>Monoambiente B:</strong> ubicado al frente izquierdo, con cocina integrada, baño completo y balcón.</li>
+      <li><strong>Estudio C:</strong> ubicado internamente, con vista a patio, cocina funcional y baño completo.</li>
+      <li><strong>Estudio D:</strong> ubicado internamente, con vista a patio, cocina compacta y baño completo.</li>
+      <li><strong>Monoambiente E:</strong> ubicado al contrafrente derecho, con cocina integrada, baño completo y balcón.</li>
+      <li><strong>Monoambiente F:</strong> ubicado al contrafrente derecho, con cocina completa, baño y balcón.</li>
+    </ul>
+    Todas las unidades cuentan con ventilación natural, balcones o vistas abiertas, y terminaciones de alta calidad.
+  </p>
+</section>
+
+
+<!-- CONTENEDOR PRINCIPAL DE UNIDADES (PISOS 3–12) -->
+<section class="apartments-container">
+  <!-- BOX A -->
+  <div class="apartment-box" data-pdf="A.pdf">
+    <h3 class="apt-title">Unidad A</h3>
+    <img src="assets/img/A.png" alt="Unidad A" class="apt-image">
+    <div class="arrow-indicator"></div>
+    <div class="apartment-info">
+      <hr class="linea-blanca">
+      <h3 class="info-title">Unidad A</h3>
+      <p class="info-text">
+        Tipo: Monoambiente<br>
+        Superficie total: 32,98 m²
+      </p>
+      <hr class="linea-blanca">
+      <h3 class="info-title">Distribución</h3>
+      <p class="info-text">
+        Ambiente único con cocina integrada, baño completo y balcón con orientación al frente. Ideal para vivienda o estudio profesional.
+      </p>
+      <hr class="linea-blanca">
+      <div class="download-wrapper">
+        <a href="pdf/A.pdf" class="btn-descargar" download>
+          Descargar plano A
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- BOX B -->
+  <div class="apartment-box" data-pdf="B.pdf">
+    <h3 class="apt-title">Unidad B</h3>
+    <img src="assets/img/B.png" alt="Unidad B" class="apt-image">
+    <div class="arrow-indicator"></div>
+    <div class="apartment-info">
+      <hr class="linea-blanca">
+      <h3 class="info-title">Unidad B</h3>
+      <p class="info-text">
+        Tipo: Monoambiente<br>
+        Superficie total: 35 m²
+      </p>
+      <hr class="linea-blanca">
+      <h3 class="info-title">Distribución</h3>
+      <p class="info-text">
+        Espacio amplio y luminoso con cocina equipada, baño completo y balcón con vista al contrafrente. Excelente ventilación cruzada.
+      </p>
+      <hr class="linea-blanca">
+      <div class="download-wrapper">
+        <a href="pdf/B.pdf" class="btn-descargar" download>
+          Descargar plano B
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- BOX C -->
+  <div class="apartment-box" data-pdf="C.pdf">
+    <h3 class="apt-title">Unidad C</h3>
+    <img src="assets/img/C.png" alt="Unidad C" class="apt-image">
+    <div class="arrow-indicator"></div>
+    <div class="apartment-info">
+      <hr class="linea-blanca">
+      <h3 class="info-title">Unidad C</h3>
+      <p class="info-text">
+        Tipo: Estudio<br>
+        Superficie total: 22,34 m²
+      </p>
+      <hr class="linea-blanca">
+      <h3 class="info-title">Distribución</h3>
+      <p class="info-text">
+        Estudio compacto con cocina integrada, baño completo y orientación a patio interno. Funcional y bien ventilado.
+      </p>
+      <hr class="linea-blanca">
+      <div class="download-wrapper">
+        <a href="pdf/C.pdf" class="btn-descargar" download>
+          Descargar plano C
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- BOX D -->
+  <div class="apartment-box" data-pdf="D.pdf">
+    <h3 class="apt-title">Unidad D</h3>
+    <img src="assets/img/D.png" alt="Unidad D" class="apt-image">
+    <div class="arrow-indicator"></div>
+    <div class="apartment-info">
+      <hr class="linea-blanca">
+      <h3 class="info-title">Unidad D</h3>
+      <p class="info-text">
+        Tipo: Estudio<br>
+        Superficie total: 22,34 m²
+      </p>
+      <hr class="linea-blanca">
+      <h3 class="info-title">Distribución</h3>
+      <p class="info-text">
+        Unidad interna con cocina lineal, baño completo y espacio flexible. Excelente opción como primer vivienda o estudio privado.
+      </p>
+      <hr class="linea-blanca">
+      <div class="download-wrapper">
+        <a href="pdf/D.pdf" class="btn-descargar" download>
+          Descargar plano D
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- BOX E -->
+  <div class="apartment-box" data-pdf="E.pdf">
+    <h3 class="apt-title">Unidad E</h3>
+    <img src="assets/img/E.png" alt="Unidad E" class="apt-image">
+    <div class="arrow-indicator"></div>
+    <div class="apartment-info">
+      <hr class="linea-blanca">
+      <h3 class="info-title">Unidad E</h3>
+      <p class="info-text">
+        Tipo: Monoambiente<br>
+        Superficie total: 31,67 m²
+      </p>
+      <hr class="linea-blanca">
+      <h3 class="info-title">Distribución</h3>
+      <p class="info-text">
+        Espacio integrado con cocina, baño completo y balcón al frente. Buena iluminación natural durante todo el día.
+      </p>
+      <hr class="linea-blanca">
+      <div class="download-wrapper">
+        <a href="pdf/E.pdf" class="btn-descargar" download>
+          Descargar plano E
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- BOX F -->
+  <div class="apartment-box" data-pdf="F.pdf">
+    <h3 class="apt-title">Unidad F</h3>
+    <img src="assets/img/F.png" alt="Unidad F" class="apt-image">
+    <div class="arrow-indicator"></div>
+    <div class="apartment-info">
+      <hr class="linea-blanca">
+      <h3 class="info-title">Unidad F</h3>
+      <p class="info-text">
+        Tipo: Monoambiente<br>
+        Superficie total: 30,17 m²
+      </p>
+      <hr class="linea-blanca">
+      <h3 class="info-title">Distribución</h3>
+      <p class="info-text">
+        Cocina en "L", baño completo y balcón con vista al contrafrente. Excelente distribución y funcionalidad.
+      </p>
+      <hr class="linea-blanca">
+      <div class="download-wrapper">
+        <a href="pdf/F.pdf" class="btn-descargar" download>
+          Descargar plano F
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- SECCIÓN PISO 13 -->
+<section id="piso-13" class="seccion-planta">
+  <h2>Piso 13</h2>
+  <!-- Imagen general del piso 13 -->
+  <img src="assets/img/piso13.png" alt="Plano Piso 13" class="img-planta">
+  <p class="centrado-texto">
+    El piso 13 cuenta con cuatro unidades funcionales distribuidas a ambos lados del núcleo central de circulación vertical. Esta planta ofrece dos departamentos de dos ambientes y dos estudios.
+    
+    A la izquierda se encuentran las unidades 13A y 13B:
+    <ul>
+      <li><strong>13A:</strong> departamento de dos ambientes al frente, con dormitorio independiente, living-comedor, cocina integrada, baño completo y amplio balcón. Superficie: 59,42 m².</li>
+      <li><strong>13B:</strong> estudio compacto con cocina en “L”, baño completo y orientación al patio interno. Superficie: 22,34 m².</li>
+    </ul>
+ 
+    A la derecha se ubican las unidades 13C y 13D:
+    <ul>
+      <li><strong>13C:</strong> estudio con cocina lineal, baño completo y vista al patio. Superficie: 22,44 m².</li>
+      <li><strong>13D:</strong> departamento de dos ambientes al contrafrente, con dormitorio, living-comedor, cocina integrada, baño completo y balcón. Superficie: 54,82 m².</li>
+    </ul>
+
+    Todas las unidades cuentan con buena ventilación cruzada, luz natural y detalles de calidad en terminaciones.
+  </p>
+</section>
+
+
+<!-- CONTENEDOR PRINCIPAL DE UNIDADES – PISO 13 -->
+<section class="apartments-container">
+  <!-- BOX 13A -->
+  <div class="apartment-box" data-pdf="13a.pdf">
+    <h3 class="apt-title">13A – 2 Ambientes</h3>
+    <img src="assets/img/a13.png" alt="Unidad 13A" class="apt-image">
+    <div class="arrow-indicator"></div>
+    <div class="apartment-info">
+      <hr class="linea-blanca">
+      <h3 class="info-title">Unidad 13A</h3>
+      <p class="info-text">
+        Tipo: 2 Ambientes<br>
+        Superficie total: 59,42 m²<br>
+        Dormitorio con placard empotrado<br>
+        Living-comedor al frente<br>
+        Cocina integrada con barra<br>
+        Balcón al frente
+      </p>
+      <hr class="linea-blanca">
+      <h3 class="info-title">Características</h3>
+      <p class="info-text">
+        • Excelente ventilación cruzada<br>
+        • Aberturas de alta prestación<br>
+        • Detalles de terminación premium<br>
+        • Ideal para vivienda permanente
+      </p>
+      <hr class="linea-blanca">
+      <div class="download-wrapper">
+        <a href="pdf/13a.pdf" class="btn-descargar" download>
+          Descargar plano 13A
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- BOX 13B -->
+  <div class="apartment-box" data-pdf="13b.pdf">
+    <h3 class="apt-title">13B – Estudio</h3>
+    <img src="assets/img/b13.png" alt="Unidad 13B" class="apt-image">
+    <div class="arrow-indicator"></div>
+    <div class="apartment-info">
+      <hr class="linea-blanca">
+      <h3 class="info-title">Unidad 13B</h3>
+      <p class="info-text">
+        Tipo: Estudio<br>
+        Superficie total: 22,34 m²<br>
+        Cocina en “L” contra pared<br>
+        Baño completo<br>
+        Vista a patio interno
+      </p>
+      <hr class="linea-blanca">
+      <h3 class="info-title">Características</h3>
+      <p class="info-text">
+        • Ideal para estudiante o profesional<br>
+        • Buena iluminación natural<br>
+        • Diseño funcional y moderno<br>
+        • Bajo costo de mantenimiento
+      </p>
+      <hr class="linea-blanca">
+      <div class="download-wrapper">
+        <a href="pdf/13b.pdf" class="btn-descargar" download>
+          Descargar plano 13B
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- BOX 13C -->
+  <div class="apartment-box" data-pdf="13c.pdf">
+    <h3 class="apt-title">13C – Estudio</h3>
+    <img src="assets/img/c13.png" alt="Unidad 13C" class="apt-image">
+    <div class="arrow-indicator"></div>
+    <div class="apartment-info">
+      <hr class="linea-blanca">
+      <h3 class="info-title">Unidad 13C</h3>
+      <p class="info-text">
+        Tipo: Estudio<br>
+        Superficie total: 22,44 m²<br>
+        Cocina contra pared<br>
+        Baño completo<br>
+        Ambiente abierto<br>
+        Vista a patio interno
+      </p>
+      <hr class="linea-blanca">
+      <h3 class="info-title">Características Destacadas</h3>
+      <p class="info-text">
+        • Muy luminoso<br>
+        • Perfecto como primer vivienda<br>
+        • Diseño compacto y eficiente<br>
+        • Posibilidad de adaptar mobiliario multifunción
+      </p>
+      <hr class="linea-blanca">
+      <div class="download-wrapper">
+        <a href="pdf/13c.pdf" class="btn-descargar" download>
+          Descargar plano 13C
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- BOX 13D -->
+  <div class="apartment-box" data-pdf="13d.pdf">
+    <h3 class="apt-title">13D – 2 Ambientes</h3>
+    <img src="assets/img/d13.png" alt="Unidad 13D" class="apt-image">
+    <div class="arrow-indicator"></div>
+    <div class="apartment-info">
+      <hr class="linea-blanca">
+      <h3 class="info-title">Unidad 13D</h3>
+      <p class="info-text">
+        Tipo: 2 Ambientes<br>
+        Superficie total: 54,82 m²<br>
+        Cocina integrada<br>
+        Living-comedor amplio<br>
+        Balcón al contrafrente
+      </p>
+      <hr class="linea-blanca">
+      <h3 class="info-title">Caracteristicas</h3>
+      <p class="info-text">
+        • Orientación tranquila con vista abierta<br>
+        • Ideal para parejas o inversión<br>
+        • Excelente circulación de aire<br>
+        • Muy buena iluminación natural
+      </p>
+      <hr class="linea-blanca">
+      <div class="download-wrapper">
+        <a href="pdf/13d.pdf" class="btn-descargar" download>
+          Descargar plano 13D
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- Enlaza aquí tu script JS -->
+<!--  <script src="js/apartamentos.js"></script>  -->
+
+
+
+
+<footer class="site-footer">
+  <!-- Contenedor principal del footer: flex en desktop, column en móvil -->
+  <div class="footer-container">
+    
+    <!-- COLUMNA IZQUIERDA: Logo -->
+    <div class="footer-left">
+      <img src="assets/img/logo_gp.png" alt="Logo GP" class="footer-logo">
+    </div>
+
+    <!-- COLUMNA CENTRAL: Contacto -->
+    <div class="footer-center">
+      <p class="footer-title">Contacto</p>
+      <ul class="contact-list">
+        <li>
+          <a href="https://wa.me/541126812785" target="_blank" rel="noopener">
+            +54 11 2681-2785
+          </a>
+        </li>
+        <li>
+          <a href="mailto:gpbuilding.boedo@gmail.com">
+            gpbuilding.boedo@gmail.com
+          </a>
+        </li>
+        <li>
+          <a href="https://maps.app.goo.gl/GdLU5zRtcSivwDXB8" target="_blank" rel="noopener">
+            Av. Boedo 772, CABA, Argentina
+          </a>
+        </li>
+      </ul>
+      <p class="footer-copy">© 2025 GP Building. Todos los derechos reservados.</p>
+    </div>
+
+    <!-- COLUMNA DERECHA: Enlaces legales -->
+    <div class="footer-right">
+      <ul class="legal-list">
+        <li><a href="aviso-legal.php">Aviso legal</a></li>
+        <li><a href="politica-cookies.php">Política de cookies</a></li>
+        <li><a href="politica-privacidad.php">Política de privacidad</a></li>
+      </ul>
+    </div>
+
+  </div>
+</footer>
+</main>
+
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    new Glide('#glide-portada', {
+      type: 'carousel',
+      perView: 1,
+      autoplay: 10000, // 5 segundos
+      hoverpause: true,
+      animationDuration: 700,
+      animationTimingFunc: 'ease'
+    }).mount();
+  });
+
+document.addEventListener("DOMContentLoaded", function () {
+  const overlay = document.getElementById("popup-overlay");
+
+  // Mostrar la imagen después de 2 segundos
+  setTimeout(() => {
+    overlay.classList.add("active");
+
+    // Ocultar después de 2 segundos o si el usuario hace clic
+    setTimeout(() => {
+      overlay.classList.remove("active");
+    }, 2000);
+
+    overlay.addEventListener("click", () => {
+      overlay.classList.remove("active");
+    });
+  }, 2000);
+});
+
+
+
+</script>
+
+
+
+</body>
+</html>
